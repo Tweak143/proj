@@ -1,5 +1,6 @@
 package apitest;
 
+import base.BaseApiTest;
 import io.restassured.authentication.OAuthSignature;
 import io.restassured.http.ContentType;
 import model.Address;
@@ -12,7 +13,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class APITestExample {
+public class APITestExample extends BaseApiTest {
 
     @Test
     public void apiExample() {
@@ -27,6 +28,7 @@ public class APITestExample {
                 .lastName("Ivanov")
                 .build();
         String response = given()
+                .spec(getRequestSpec())
                 .auth().oauth2("Strsdfsdf", OAuthSignature.HEADER)// doesn't work
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
@@ -34,6 +36,7 @@ public class APITestExample {
                 .body(toSend)
                 .post("/post")
                 .then()
+                .spec(getResponseSpec())
                 .statusCode(200)
                 .body("data.firstName", Matchers.equalTo(toSend.getFirstName()))
                 .extract()
