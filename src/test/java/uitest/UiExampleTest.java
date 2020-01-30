@@ -27,25 +27,25 @@ public class UiExampleTest {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS)
                 .pageLoadTimeout(10, TimeUnit.SECONDS)
                 .setScriptTimeout(10, TimeUnit.SECONDS);
-//        driver.navigate().refresh();
-//        WebElement element = driver.findElement(By.className("logo"));
-//        element.click();
-//        WebElement elementField = driver.findElement(By.cssSelector(".search_query"));
-//        boolean bool = elementField.isDisplayed();
-//        elementField.sendKeys("t-shirt");
-//        elementField.clear();
-//        elementField.sendKeys("t-shirt123");
-//        String text = elementField.getText();
-//        elementField.click();
-//        elementField.submit();
-//        driver.findElement(By.xpath("//div[@id='header_logo']//img[contains(@class,'img')]"));
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(driver.findElement(By.cssSelector(".replace-2x"))).build().perform();
+        driver.navigate().refresh();
+        WebElement element = driver.findElement(By.className("logo"));
+        element.click();
+        WebElement elementField = driver.findElement(By.cssSelector(".search_query"));
+        boolean bool = elementField.isDisplayed();
+        elementField.sendKeys("t-shirt");
+        elementField.clear();
+        elementField.sendKeys("t-shirt123");
+        String text = elementField.getText();
+        elementField.click();
+        elementField.submit();
+        driver.findElement(By.xpath("//div[@id='header_logo']//img[contains(@class,'img')]"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(By.cssSelector(".replace-2x"))).build().perform();
         driver.findElement(By.cssSelector("[title='Women']")).click();
         Select select = new Select(driver.findElement(By.id("selectProductSort")));
         select.selectByValue("price:asc");
-//        new WebDriverWait(driver, 10, 200)
-//                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#asdfsfw987rwdskjs")));
+        new WebDriverWait(driver, 10, 200)
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#asdfsfw987rwdskjs")));
         new WebDriverWait(driver, 3).until(new ExpectedCondition<Boolean>() {
             @Nullable
             @Override
