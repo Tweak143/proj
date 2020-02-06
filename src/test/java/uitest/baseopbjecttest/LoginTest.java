@@ -1,18 +1,23 @@
 package uitest.baseopbjecttest;
 
+import io.qameta.allure.*;
+import listener.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobject.page.HomePage;
 import pageobject.page.LoginPage;
 import pageobject.service.LoginService;
-import webdriver.WebDriverService;
 
 import java.util.concurrent.TimeUnit;
 
 import static webdriver.WebDriverService.getDriver;
 
+@Listeners({TestListener.class})
+@Epic("UI")
+@Feature("Login")
 public class LoginTest {
 
     @BeforeMethod
@@ -24,7 +29,10 @@ public class LoginTest {
                 .setScriptTimeout(10, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Description("bla-bla-bla")
+    @Story("storyyyyy")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test (priority = 1, description="12345234324324")
     public void fakeLoginTest() {
         new HomePage().openSignInPage();
         LoginService loginService = new LoginService();

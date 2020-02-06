@@ -7,7 +7,7 @@ public class LoginPage extends BasePage {
 
     private static final By titleBy = By.cssSelector(".page-heading");
     private static final By createAccountButtonBy = By.id("SubmitCreate");
-    private static final By EMAIL_FIELD_BY = By.id("email");
+    private static final By EMAIL_FIELD_BY = By.id("email234234324324");
     private static final By PASSWORD_FIELD_BY = By.id("passwd");
     private static final By SIGN_IN_BUTTON_BY = By.id("SubmitLogin");
     private static final By ALERT_BY = By.cssSelector(".alert-danger");
