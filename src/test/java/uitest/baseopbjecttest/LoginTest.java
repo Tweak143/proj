@@ -2,6 +2,7 @@ package uitest.baseopbjecttest;
 
 import io.qameta.allure.*;
 import listener.TestListener;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,8 +21,12 @@ import static webdriver.WebDriverService.getDriver;
 @Feature("Login")
 public class LoginTest {
 
+//    ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<>();
+
     @BeforeMethod
     public void setUp() {
+//        webDriverThreadLocal.set(getDriver());
+//        webDriverThreadLocal.get().close();
         getDriver().get("http://automationpractice.com");
         getDriver().manage().window().maximize();
         getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS)
@@ -32,7 +37,7 @@ public class LoginTest {
     @Description("bla-bla-bla")
     @Story("storyyyyy")
     @Severity(SeverityLevel.CRITICAL)
-    @Test (priority = 1, description="12345234324324")
+    @Test (priority = 1, description="12345234324324", enabled = false)
     public void fakeLoginTest() {
         new HomePage().openSignInPage();
         LoginService loginService = new LoginService();

@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 public class LoginApiTest {
 
-    @Test(dataProvider = "getData", dataProviderClass = DataProviderForTest.class, enabled = true, groups = {"Group1", "Group2"})
+    @Test(dataProvider = "getData", dataProviderClass = DataProviderForTest.class, enabled = false, groups = {"Group1", "Group2"})
     public void possitiveLoginTest(String smth, int i) {
         SoftAssert softAssert = new SoftAssert();
 //        Assert.assertEquals(smth, "123");

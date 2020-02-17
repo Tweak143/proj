@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 
 public class APITestExample extends BaseApiTest {
 
-    @Test
+    @Test(enabled = false)
     public void apiExample() {
         Address address = new Address("Minsk", "Street", 123);
         RequestObject toSend = RequestObject.builder()
@@ -44,7 +44,7 @@ public class APITestExample extends BaseApiTest {
         System.out.println(response);
     }
 
-    @Test
+    @Test(enabled = false)
     public void getTest() {
         Map<String, Object> params = new HashMap<>();
         params.put("lastName", "Doe");

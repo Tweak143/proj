@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class UiExampleTest {
 
-    @Test
+    @Test(enabled = false)
     public void uiTest() {
 //        WebDriver driver = new RemoteWebDriver();
         WebDriver driver = new ChromeDriver();

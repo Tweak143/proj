@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests to execute">
+    <test name="Name_one" thread-count="1" parallel="classes">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="apitest.APITestExample">
+                <methods>
+                    <include name="getTest"/>
+                    <exclude name="apiExample"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Name_two" thread-count="4" parallel="classes">
+        <classes>
+            <class name="uitest.UiExampleTest"/>
+        </classes>
+    </test>
+</suite>
+
+        <!--mvn clean test -Dsurefire.suiteXmlFiles=/src/test/resources/suites/testng2.xml-->
+

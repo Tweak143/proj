@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 @Execution(ExecutionMode.CONCURRENT)
 public class TestClassJUnit {
 
-    @Test
+    @Test(enabled = false)
     public void firstTest() {
         Assertions.assertAll(() -> Assertions.assertEquals(1, 2),
                 () -> Assertions.assertTrue(false),

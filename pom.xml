@@ -29,7 +29,9 @@
                     <version>2.20.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>TestNG.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>TestNG.xml</suiteXmlFile>-->
+                        <suiteXmlFile>src/test/resources/classes.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/groups.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

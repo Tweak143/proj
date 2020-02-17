@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests to execute classes">
+    <test name="ClassOneTest" thread-count="6" parallel="methods">
+        <classes>
+            <class name="forxml.ClassOne">
+                <methods>
+                    <exclude name="secondATest"/>
+                    <exclude name="fifthATest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ClassTwoTest" thread-count="4" parallel="methods">
+        <classes>
+            <class name="forxml.ClassTwo">
+                <methods>
+                    <include name="secondCTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ClassThreeTest" thread-count="1" parallel="classes">
+        <classes>
+            <class name="forxml.ClassThree">
+                <methods>
+                    <include name="secondBTest"/>
+                    <exclude name="firstBTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
